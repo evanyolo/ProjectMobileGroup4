@@ -42,6 +42,6 @@
             android:backgroundTint="#113946"
             android:text="Continue"
             android:textColor="#EAD7BB"
-            app:cornerRadius="0dp" />
+            app:cornerRadius="15dp" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
