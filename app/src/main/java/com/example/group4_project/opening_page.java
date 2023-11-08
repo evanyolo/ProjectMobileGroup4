@@ -15,8 +15,6 @@ public class opening_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opening_page);
 
-
-
         Button loginpage = findViewById(R.id.tologin);
         loginpage.setOnClickListener(view -> {
             Intent i = new Intent(getApplicationContext(), login_page.class);
