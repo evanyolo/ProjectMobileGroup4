@@ -8,8 +8,8 @@
     tools:context=".login_page">
 
     <RelativeLayout
-        android:layout_width="392dp"
-        android:layout_height="803dp"
+        android:layout_width="394dp"
+        android:layout_height="809dp"
         android:background="#FFF2D8"
         tools:layout_editor_absoluteX="2dp">
 

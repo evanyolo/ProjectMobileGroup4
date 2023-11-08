@@ -7,11 +7,11 @@
     tools:context=".signup_page">
 
     <RelativeLayout
-        android:layout_width="409dp"
-        android:layout_height="911dp"
+        android:layout_width="390dp"
+        android:layout_height="803dp"
         android:background="#FFF2D8"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteY="2dp">
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
