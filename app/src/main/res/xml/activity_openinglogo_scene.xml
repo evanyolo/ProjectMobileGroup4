@@ -24,7 +24,8 @@
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             android:scaleX="10"
-            android:scaleY="10" />
+            android:scaleY="10"
+            motion:transitionEasing="cubic(0.2,0.2,0.8,0.79)" />
         <Constraint
             android:id="@+id/logoApps"
             motion:layout_constraintEnd_toEndOf="parent"

@@ -21,6 +21,7 @@ public class Openinglogo extends AppCompatActivity {
             @Override
             public void run() {
                 Intent i = new Intent(Openinglogo.this, opening_page.class);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 startActivity(i);
                 finish();
             }
