@@ -57,6 +57,7 @@
             android:drawableStart="@drawable/baseline_account_box_24"
             android:ems="10"
             android:hint="   Email"
+            android:textColorHint="@color/black"
             android:inputType="text"
             android:paddingStart="10dp" />
 
@@ -73,18 +74,19 @@
             android:ems="10"
             android:hint="   Password"
             android:inputType="textPassword"
+            android:textColorHint="@color/black"
             android:paddingStart="10dp" />
 
         <Button
             android:id="@+id/tologin2"
-            android:layout_width="214dp"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="427dp"
-            android:layout_marginEnd="100dp"
+            android:layout_marginEnd="50dp"
             android:backgroundTint="#113946"
             android:text="Log in"
             android:textColor="#EAD7BB"
