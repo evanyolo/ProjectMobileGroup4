@@ -14,6 +14,137 @@
         tools:layout_editor_absoluteY="2dp">
 
         <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="493dp"
+            android:layout_marginEnd="213dp"
+            android:src="@drawable/_296520_bubble_chat_mobile_whatsapp_whatsapp_logo_icon" />
+
+        <Button
+            android:id="@+id/tologin3"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="553dp"
+            android:layout_marginEnd="50dp"
+            android:backgroundTint="#113946"
+            android:text="Log in"
+            android:textColor="#EAD7BB"
+            app:cornerRadius="15dp" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="213dp"
+            android:layout_marginTop="491dp"
+            android:layout_marginEnd="145dp"
+            android:src="@drawable/icons8_google" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="283dp"
+            android:layout_marginTop="491dp"
+            android:layout_marginEnd="75dp"
+            android:src="@drawable/tiktok_square_color_icon" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="492dp"
+            android:layout_marginEnd="271dp"
+            android:src="@drawable/_296499_fb_facebook_facebook_logo_icon" />
+
+        <EditText
+            android:id="@+id/editTextText3"
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="281dp"
+            android:layout_marginEnd="49dp"
+            android:background="@drawable/cstm_edtt"
+            android:drawableStart="@drawable/baseline_account_box_24"
+            android:ems="10"
+            android:hint="   Email"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:textColorHint="@color/black" />
+
+        <EditText
+            android:id="@+id/editTextText2"
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="210dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/cstm_edtt"
+            android:drawableStart="@drawable/baseline_account_box_24"
+            android:ems="10"
+            android:hint="   Username"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:textColorHint="@color/black" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="343dp"
+            android:layout_marginEnd="49dp"
+            android:background="@drawable/cstm_edtt"
+            android:ems="10"
+            android:hint="   Phone"
+            android:drawableStart="@drawable/baseline_phone_enabled_24"
+            android:inputType="phone"
+            android:paddingStart="10dp"
+            android:textColorHint="@color/black" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword2"
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="412dp"
+            android:layout_marginEnd="49dp"
+            android:background="@drawable/cstm_edtt"
+            android:drawableStart="@drawable/password_svgrepo_com__1_"
+            android:ems="10"
+            android:hint="   Password"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:textColorHint="@color/black" />
+
+        <ImageView
             android:id="@+id/logoApps4"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -40,5 +171,6 @@
             android:textColor="#000000"
             android:textSize="30dp"
             android:textStyle="bold" />
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
