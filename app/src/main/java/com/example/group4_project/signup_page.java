@@ -1,11 +1,9 @@
 package com.example.group4_project;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,7 +26,7 @@ private EditText etUsername, etEmail,etPass, etNumber,etRepassword;
 private RequestQueue requestQueue;
 private TextView tvStat;
 private String url ="http://192.168.1.11/File Mobile/projek/register.php";
-private String username, email, password, number, repass;
+private String name_cus, email, password, phones, repass;
 Button btnRegis;
 Button confirm;
     @Override
@@ -44,53 +42,45 @@ Button confirm;
         etRepassword = findViewById(R.id.inputRepass);
         btnRegis = findViewById(R.id.btnRegis);
 
-    }
-    public void save (View v){
-       username = etUsername.getText().toString().trim();
-       email = etEmail.getText().toString().trim();
-       password = etPass.getText().toString().trim();
-       number = etNumber.getText().toString().trim();
-       repass = etRepassword.getText().toString().trim();
-       if(!password.equals(repass)){
-           Toast.makeText(this,"Password didn't match",Toast.LENGTH_SHORT).show();
-       } else if (!username.equals("")&&!email.equals("")&&!password.equals("")) {
-           StringRequest sr = new StringRequest(Request.Method.POST, url,
-                   new Response.Listener<String>() {
-                       @Override
-                       public void onResponse(String response) {
-                           if (response.equals("success")) {
-                                tvStat.setText("Successfully registered");
-                                btnRegis.setClickable(false);
-                           } else if (response.equals("failed")) {
-                               tvStat.setText("Something wrong");
+        btnRegis.setOnClickListener(view -> {
+            name_cus = etUsername.getText().toString();
+            email = etEmail.getText().toString();
+            password = etPass.getText().toString();
+            repass = etRepassword.getText().toString();
+            phones = etNumber.getText().toString();
+            if(!password.equals(repass)){
+                Toast.makeText(this,"Password didn't match",Toast.LENGTH_SHORT).show();
+            } else if (name_cus.isEmpty()||email.isEmpty()|| password.isEmpty()|| phones.isEmpty())  {
+                StringRequest sr = new StringRequest(Request.Method.POST, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                Toast.makeText(signup_page.this, response.toString(), Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(),login_page.class));
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                // Handle Volley error here (e.g., display an error message)
+                                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                            }
+                        }){
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> data = new HashMap<>();
+                        data.put("name_customer", name_cus);
+                        data.put("email",email);
+                        data.put("phone", phones);
+                        data.put("password",password);
+                        return data;
+                    }
+                };
+                requestQueue = Volley.newRequestQueue(getApplicationContext());
+                requestQueue.add(sr);
+            }
 
-                           }
-                       }
-                   },
-                   new Response.ErrorListener() {
-                       @Override
-                       public void onErrorResponse(VolleyError error) {
-                           // Handle Volley error here (e.g., display an error message)
-                           Toast.makeText(signup_page.this, "Error occurred", Toast.LENGTH_SHORT).show();
-                       }
-                   }){
-               @Nullable
-               @Override
-               protected Map<String, String> getParams() throws AuthFailureError {
-                   Map<String, String> data = new HashMap<>();
-                   data.put("name_customer",username);
-                   data.put("email",email);
-                   data.put("phone",number);
-                   data.put("password",password);
-                   return data;
-               }
-           };
-           requestQueue = Volley.newRequestQueue(getApplicationContext());
-           requestQueue.add(sr);
-       }
-
+        });
 
     }
-
-
 }
