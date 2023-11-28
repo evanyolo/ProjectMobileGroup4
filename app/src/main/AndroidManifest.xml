@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Group4_project"
         tools:targetApi="31">
         <activity
+            android:name=".homepage"
+            android:exported="false" />
+        <activity
             android:name=".opening_page"
             android:exported="false" />
         <activity
