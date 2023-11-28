@@ -42,6 +42,7 @@
             android:layout_marginEnd="50dp"
             android:backgroundTint="#113946"
             android:text="Continue"
+            android:textSize="17dp"
             android:textColor="#EAD7BB"
             app:cornerRadius="15dp" />
 

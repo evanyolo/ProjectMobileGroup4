@@ -51,12 +51,14 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="48dp"
+            android:textColor="@color/black"
             android:layout_marginTop="199dp"
             android:layout_marginEnd="49dp"
             android:background="@drawable/cstm_edtt"
             android:drawableStart="@drawable/baseline_account_box_24"
             android:ems="10"
             android:hint="   Email"
+
             android:textColorHint="@color/black"
             android:inputType="text"
             android:paddingStart="10dp" />
@@ -73,6 +75,7 @@
             android:drawableStart="@drawable/password_svgrepo_com__1_"
             android:ems="10"
             android:hint="   Password"
+            android:textColor="@color/black"
             android:inputType="textPassword"
             android:textColorHint="@color/black"
             android:paddingStart="10dp" />
@@ -89,6 +92,7 @@
             android:layout_marginEnd="50dp"
             android:backgroundTint="#113946"
             android:text="Log in"
+            android:textSize="17dp"
             android:textColor="#EAD7BB"
             app:cornerRadius="15dp" />
 
@@ -110,14 +114,14 @@
 
         <Button
             android:id="@+id/toSignup"
-            android:layout_width="177dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="109dp"
-            android:layout_marginTop="561dp"
-            android:layout_marginEnd="107dp"
+            android:layout_marginStart="142dp"
+            android:layout_marginTop="537dp"
+            android:layout_marginEnd="140dp"
             android:backgroundTint="#FEF1D7"
             android:backgroundTintMode="src_atop"
             android:text="Sign Up"
