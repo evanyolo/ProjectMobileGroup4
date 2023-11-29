@@ -44,7 +44,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/inputEmailLog"
             android:layout_width="296dp"
             android:layout_height="46dp"
             android:layout_alignParentStart="true"
@@ -64,7 +64,7 @@
             android:paddingStart="10dp" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/inputPassLog"
             android:layout_width="296dp"
             android:layout_height="46dp"
             android:layout_alignParentTop="true"
@@ -81,7 +81,7 @@
             android:paddingStart="10dp" />
 
         <Button
-            android:id="@+id/tologin2"
+            android:id="@+id/tohomepage"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
