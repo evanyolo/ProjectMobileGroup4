@@ -1,5 +1,6 @@
 package com.example.group4_project;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,12 +9,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class login_page extends AppCompatActivity {
 
@@ -52,10 +57,10 @@ public void logins(){
         email = etEmaillog.getText().toString();
         passwrd = etPass.getText().toString();
         if (!email.isEmpty() && !passwrd.isEmpty()) { // Corrected condition
-            StringRequest sr = new StringRequest(Request.Method.GET, dbs.urllogin + "?email=" + email + "&password=" + passwrd, new Response.Listener<String>() {
+            StringRequest sr = new StringRequest(Request.Method.POST, dbs.urllogin + "?email=" + email + "&password=" + passwrd, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    if (response.equals("Selamat Datang")) {
+                    if (response.equals("1") ) {
                         Intent i = new Intent(getApplicationContext(), homepage.class);
                         Toast.makeText(login_page.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
                         startActivity(i);
@@ -70,7 +75,16 @@ public void logins(){
                     Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
                 }
 
-            });
+            }){
+                @Nullable
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("email",email);
+                    params.put("password",passwrd);
+                    return params;
+                }
+            };
             requestQueue = Volley.newRequestQueue(getApplicationContext());
             requestQueue.add(sr);
 
