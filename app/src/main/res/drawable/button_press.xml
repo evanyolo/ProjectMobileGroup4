@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_pressed="true"
+        android:drawable="@drawable/airconditioner"/>
+    <item
+        android:state_pressed="true"
+        android:drawable="@drawable/parquet"/>
+    <item
+        android:state_pressed="true"
+        android:drawable="@drawable/swimmingpool"/>
+    <item
+        android:state_pressed="true"
+        android:drawable="@drawable/roofs"/>
+    <item
+        android:state_pressed="true"
+        android:drawable="@drawable/toilets"/>
+    <item
+        android:state_pressed="true"
+        android:drawable="@drawable/paintroller"/>
+
+    <item
+        android:state_pressed="true"
+        android:drawable="@drawable/heart"/>
+
+    <item
+        android:state_pressed="true"
+        android:drawable="@drawable/lightbulb"/>
+</selector>
