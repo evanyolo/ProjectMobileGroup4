@@ -61,7 +61,7 @@ public void logins(){
                 @Override
                 public void onResponse(String response) {
                     if (response.equals("1") ) {
-                        Intent i = new Intent(getApplicationContext(), homepage.class);
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
                         Toast.makeText(login_page.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
                         startActivity(i);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
