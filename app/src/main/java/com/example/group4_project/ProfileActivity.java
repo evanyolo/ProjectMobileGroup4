@@ -27,7 +27,7 @@ public class ProfileActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
-            } else if (item.getItemId() == R.id.bottom_history) {
+            } else if (item.getItemId() == R.id.bottom_article) {
                 startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();

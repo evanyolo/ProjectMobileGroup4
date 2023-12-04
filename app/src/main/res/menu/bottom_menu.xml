@@ -5,8 +5,8 @@
         android:icon="@drawable/baseline_home_24"
         android:title="home"/>
     <item
-        android:id="@+id/bottom_history"
-        android:icon="@drawable/baseline_history_24"
+        android:id="@+id/bottom_article"
+        android:icon="@drawable/baseline_article_24"
         android:title="History"/>
     <item
         android:id="@+id/bottom_profile"

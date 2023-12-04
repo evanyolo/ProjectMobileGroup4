@@ -36,7 +36,7 @@ public class HistoryActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
-            } else if (item.getItemId() == R.id.bottom_history) {
+            } else if (item.getItemId() == R.id.bottom_article) {
                 return true;
             } else if (item.getItemId() == R.id.bottom_profile) {
                 startActivity(new Intent(getApplicationContext(), ProfileActivity.class));

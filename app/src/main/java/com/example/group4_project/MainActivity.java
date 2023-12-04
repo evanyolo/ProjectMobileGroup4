@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if(item.getItemId() == R.id.bottom_home){
                 return true;
-            } else if (item.getItemId() == R.id.bottom_history) {
+            } else if (item.getItemId() == R.id.bottom_article) {
                 startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
