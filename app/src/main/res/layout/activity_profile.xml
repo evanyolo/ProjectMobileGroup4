@@ -17,6 +17,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            app:cornerRadius="100dp"
+            android:backgroundTint="#FEF1D7"
+            android:text="Log Out" />
+
         <TextView
             android:id="@+id/profilenames"
             android:layout_width="139dp"
