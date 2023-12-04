@@ -43,13 +43,13 @@ public class UserManagement {
             ((ProfileActivity)c).finish();
         }
     }
-    public HashMap<String, String> userDetails(){
-        HashMap<String,String> u = new HashMap<>();
-        u.put(names, sp.getString(names,null));
-        u.put(emails, sp.getString(emails,null));
-        u.put(phones, sp.getString(phones,null));
-        return u;
-    }
+   public HashMap<String, String> userDetails(){
+    HashMap<String,String> u = new HashMap<>();
+    u.put(names, sp.getString(names, ""));
+    u.put(emails, sp.getString(emails, ""));
+    u.put(phones, sp.getString(phones, ""));
+    return u;
+}
     public void logout(){
         editor.clear();
         editor.commit();

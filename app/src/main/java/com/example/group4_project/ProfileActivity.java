@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -87,14 +88,23 @@ public class ProfileActivity extends AppCompatActivity {
     }
     public void show(){
         Intent i = getIntent();
-        nama = i.getStringExtra("name_customer");
-        email = i.getStringExtra("email");
-        phone = i.getStringExtra("phone");
-
         name_tv = findViewById(R.id.profilenames);
         emails_tv = findViewById(R.id.profileemail);
         phones_tv = findViewById(R.id.profilephones);
+         if (i != null) {
+             final String mName = i.getStringExtra("name_customer");
+             final String mEmails = i.getStringExtra("email");
+             final String mPhone = i.getStringExtra("phone");
 
-
+        if (mName != null) {
+            name_tv.setText(mName);
+        }
+        if (mEmails != null) {
+            emails_tv.setText(mEmails);
+        }
+        if (mPhone != null) {
+            phones_tv.setText(mPhone);
+        }
+    }
     }
 }
