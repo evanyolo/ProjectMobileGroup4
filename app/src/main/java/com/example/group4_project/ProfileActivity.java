@@ -1,5 +1,6 @@
 package com.example.group4_project;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -49,31 +51,36 @@ public class ProfileActivity extends AppCompatActivity {
         show();
         logout();
 
-    }
-    public void user(){
 
     }
+
     public void logout(){
-        um = new UserManagement(this);
-        um.checkLog();
 
-
-        HashMap<String, String> u = um.userDetails();
-        final String mEmail = u.get(um.emails);
-        final String mName = u.get(um.names);
-        final String mPhone = u.get(um.phones);
 
 
         logoutBtn = findViewById(R.id.logout);
         logoutBtn.setOnClickListener(view -> {
+            um = new UserManagement(this);
+            um.checkLog();
 
-            SharedPreferences sharedPreferences = getSharedPreferences("user_session", Context.MODE_PRIVATE);
-            sharedPreferences.edit().remove("email").commit();
-            sharedPreferences.edit().remove("password").commit();
-            sharedPreferences.edit().apply();
-            Intent i = new Intent(getApplicationContext(), opening_page.class);
-            startActivity(i);
-            finish();
+
+            HashMap<String, String> u = um.userDetails();
+            final String mEmail = u.get(um.emails);
+            final String mName = u.get(um.names);
+            final String mPhone = u.get(um.phones);
+
+            AlertDialog.Builder ad = new AlertDialog.Builder(this);
+
+            ad.setTitle("Log out?");
+            ad.setMessage("Are you sure want to Log out?");
+            ad.setPositiveButton("Yes", (dialogInterface, i) -> {
+                um.logout();
+            });
+            ad.setNegativeButton("No",(dialogInterface, i) -> {
+                Toast.makeText(this, "Log out failed",Toast.LENGTH_SHORT).show();
+                dialogInterface.dismiss();
+            });
+
         });
 
 

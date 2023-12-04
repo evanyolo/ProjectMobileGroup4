@@ -30,6 +30,7 @@ public class login_page extends AppCompatActivity {
     private String email, passwrd;
     private RequestQueue requestQueue;
     private Button btnLogins,signuppg;
+    UserManagement um;
 
 
 
@@ -42,6 +43,7 @@ public class login_page extends AppCompatActivity {
 
         etEmaillog = findViewById(R.id.inputEmailLog);
         etPass = findViewById(R.id.inputPassLog);
+        um = new UserManagement(this);
 
         register();
         logins();
@@ -87,10 +89,12 @@ public void logins(){
                                 String email = o.getString("email");
                                 String phone = o.getString("phone");
 
+                                um.userSessions(name,email,phone);
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 intent.putExtra("name_customer", name);
                                 intent.putExtra("email", email);
                                 intent.putExtra("phone", phone);
+
 
                                 Toast.makeText(login_page.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
                                 startActivity(intent);
