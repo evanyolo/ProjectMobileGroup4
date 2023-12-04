@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -83,14 +84,14 @@ public void logins(){
 
                         if (r.equals("success")) {
                             // Assuming you're expecting only one object in the array
-                            if (jsonArray.length() > 0) {
-                                JSONObject o = jsonArray.getJSONObject(0);
-                                String name = o.getString("name_customer");
-                                String email = o.getString("email");
-                                String phone = o.getString("phone");
+                           for(int i =0; i < jsonArray.length();i++){
+                                JSONObject o = jsonArray.getJSONObject(i);
+                                final String name = o.getString("name_customer");
+                                final String email = o.getString("email");
+                                final String phone = o.getString("phone");
 
                                 um.userSessions(name,email,phone);
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent intent = new Intent(login_page.this, ProfileActivity.class);
                                 intent.putExtra("name_customer", name);
                                 intent.putExtra("email", email);
                                 intent.putExtra("phone", phone);
@@ -100,9 +101,6 @@ public void logins(){
                                 startActivity(intent);
                                 finish();
                                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                            } else {
-                                // Handle case when no data is present in the array
-                                Toast.makeText(login_page.this, "No data found", Toast.LENGTH_SHORT).show();
                             }
                         } else {
                             Toast.makeText(login_page.this, "Email dan password tidak sesuai", Toast.LENGTH_SHORT).show();
