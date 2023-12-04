@@ -2,16 +2,25 @@ package com.example.group4_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.HashMap;
+
 public class ProfileActivity extends AppCompatActivity {
     TextView name_tv, emails_tv , phones_tv;
     String nama, email, phone;
+
+    Button logoutBtn;
+    UserManagement um;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +47,35 @@ public class ProfileActivity extends AppCompatActivity {
             return false;
         });
         show();
+        logout();
+
+    }
+    public void user(){
+
+    }
+    public void logout(){
+        um = new UserManagement(this);
+        um.checkLog();
+
+
+        HashMap<String, String> u = um.userDetails();
+        final String mEmail = u.get(um.emails);
+        final String mName = u.get(um.names);
+        final String mPhone = u.get(um.phones);
+
+
+        logoutBtn = findViewById(R.id.logout);
+        logoutBtn.setOnClickListener(view -> {
+
+            SharedPreferences sharedPreferences = getSharedPreferences("user_session", Context.MODE_PRIVATE);
+            sharedPreferences.edit().remove("email").commit();
+            sharedPreferences.edit().remove("password").commit();
+            sharedPreferences.edit().apply();
+            Intent i = new Intent(getApplicationContext(), opening_page.class);
+            startActivity(i);
+            finish();
+        });
+
 
     }
     public void show(){
@@ -49,10 +87,6 @@ public class ProfileActivity extends AppCompatActivity {
         name_tv = findViewById(R.id.profilenames);
         emails_tv = findViewById(R.id.profileemail);
         phones_tv = findViewById(R.id.profilephones);
-
-        name_tv.setText(nama);
-        emails_tv.setText(email);
-        phones_tv.setText(phone);
 
 
     }
