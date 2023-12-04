@@ -17,6 +17,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +43,14 @@ public class login_page extends AppCompatActivity {
         register();
         logins();
 
+//        if (response.equals("1") ) {
+//            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+//            Toast.makeText(login_page.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
+//            startActivity(i);
+//            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//        } else {
+//            Toast.makeText(login_page.this, "Email dan password tidak sesuai", Toast.LENGTH_SHORT).show();
+//        }
 
 
         }
@@ -56,18 +67,28 @@ public void logins(){
     btnLogins.setOnClickListener(view -> {
         email = etEmaillog.getText().toString();
         passwrd = etPass.getText().toString();
-        if (!email.isEmpty() && !passwrd.isEmpty()) { // Corrected condition
+        if (!email.isEmpty() && !passwrd.isEmpty()) {
             StringRequest sr = new StringRequest(Request.Method.POST, dbs.urllogin + "?email=" + email + "&password=" + passwrd, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    if (response.equals("1") ) {
-                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                        Toast.makeText(login_page.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
-                        startActivity(i);
-                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    } else {
-                        Toast.makeText(login_page.this, "Email dan password tidak sesuai", Toast.LENGTH_SHORT).show();
+                    try {
+                        JSONObject js = new JSONObject(response);
+                        String r = js.getString("status");
+                        if (r.equals("success") ) {
+                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                            Toast.makeText(login_page.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
+                            startActivity(i);
+                            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                        } else {
+                            Toast.makeText(login_page.this, "Email dan password tidak sesuai", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Toast.makeText(login_page.this, "Email dan password Salah" , Toast.LENGTH_SHORT).show();
                     }
+
+
+
                 }
             }, new Response.ErrorListener() {
                 @Override

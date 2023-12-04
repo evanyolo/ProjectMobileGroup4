@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfileActivity extends AppCompatActivity {
+    TextView name_tv, emails_tv , phones_tv;
+    String nama, email, phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,23 @@ public class ProfileActivity extends AppCompatActivity {
             }
             return false;
         });
+        show();
+
+    }
+    public void show(){
+        Intent i = getIntent();
+        nama = i.getStringExtra("name_customer");
+        email = i.getStringExtra("email");
+        phone = i.getStringExtra("phone");
+
+        name_tv = findViewById(R.id.profilenames);
+        emails_tv = findViewById(R.id.profileemail);
+        phones_tv = findViewById(R.id.profilephones);
+
+        name_tv.setText(nama);
+        emails_tv.setText(email);
+        phones_tv.setText(phone);
+
 
     }
 }

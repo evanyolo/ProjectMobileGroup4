@@ -60,8 +60,8 @@ Button confirm;
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(),login_page.class));
+                                Toast.makeText(getApplicationContext(), "Registrasi Berhasil", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), login_page.class));
                             }
                         },
                         new Response.ErrorListener() {
