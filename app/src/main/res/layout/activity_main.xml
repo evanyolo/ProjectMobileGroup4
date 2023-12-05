@@ -84,6 +84,24 @@
 
 
             </androidx.cardview.widget.CardView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:clipToPadding="false"
+                android:layout_above="@+id/btnCheckout" />
+
+            <Button
+                android:id="@+id/btnCheckout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Checkout"
+                android:layout_alignParentBottom="true"
+                android:background="?attr/colorPrimary"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:padding="16dp"/>
         </LinearLayout>
 
     </ScrollView>
