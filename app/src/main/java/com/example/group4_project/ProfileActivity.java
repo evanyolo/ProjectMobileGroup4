@@ -3,13 +3,9 @@ package com.example.group4_project;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,18 +53,12 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void logout(){
 
-
-
         logoutBtn = findViewById(R.id.logout);
         logoutBtn.setOnClickListener(view -> {
             um = new UserManagement(this);
             um.checkLog();
 
 
-            HashMap<String, String> u = um.userDetails();
-            final String mEmail = u.get(um.emails);
-            final String mName = u.get(um.names);
-            final String mPhone = u.get(um.phones);
 
             AlertDialog.Builder ad = new AlertDialog.Builder(this);
 
@@ -95,16 +85,9 @@ public class ProfileActivity extends AppCompatActivity {
              final String mName = i.getStringExtra("name_customer");
              final String mEmails = i.getStringExtra("email");
              final String mPhone = i.getStringExtra("phone");
-
-        if (mName != null) {
-            name_tv.setText(mName);
-        }
-        if (mEmails != null) {
-            emails_tv.setText(mEmails);
-        }
-        if (mPhone != null) {
-            phones_tv.setText(mPhone);
-        }
+             name_tv.setText(mName);
+             emails_tv.setText(mEmails);
+             phones_tv.setText(mPhone);
     }
     }
 }
