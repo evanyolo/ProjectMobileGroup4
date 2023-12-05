@@ -18,6 +18,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private List<OrderListModel> orderListModels;
+    //private CategoryAdapter categoryAdapter;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         //orderListModels.add(new CategoryModel("Memperbaiki Atap", R.drawable.roofs));
        // orderListModels.add(new CategoryModel("Membangun Kolam Renang", R.drawable.swimmingpool));
 
-       // recyclerView.setAdapter(categoryAdapter);
+        //recyclerView.setAdapter(categoryAdapter);
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);

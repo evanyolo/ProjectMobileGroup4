@@ -16,11 +16,8 @@ import java.util.HashMap;
 public class ProfileActivity extends AppCompatActivity {
     TextView name_tv, emails_tv , phones_tv;
     String nama, email, phone;
-
     Button logoutBtn;
     UserManagement um;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,18 +44,12 @@ public class ProfileActivity extends AppCompatActivity {
         });
         show();
         logout();
-
-
     }
-
     public void logout(){
-
         logoutBtn = findViewById(R.id.logout);
         logoutBtn.setOnClickListener(view -> {
             um = new UserManagement(this);
             um.checkLog();
-
-
 
             AlertDialog.Builder ad = new AlertDialog.Builder(this);
 
@@ -71,10 +62,7 @@ public class ProfileActivity extends AppCompatActivity {
                 Toast.makeText(this, "Log out failed",Toast.LENGTH_SHORT).show();
                 dialogInterface.dismiss();
             });
-
         });
-
-
     }
     public void show(){
         Intent i = getIntent();

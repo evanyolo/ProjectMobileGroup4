@@ -33,8 +33,6 @@ public class login_page extends AppCompatActivity {
     private Button btnLogins,signuppg;
     UserManagement um;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,17 +46,6 @@ public class login_page extends AppCompatActivity {
 
         register();
         logins();
-
-//        if (response.equals("1") ) {
-//            Intent i = new Intent(getApplicationContext(), MainActivity.class);
-//            Toast.makeText(login_page.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
-//            startActivity(i);
-//            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//        } else {
-//            Toast.makeText(login_page.this, "Email dan password tidak sesuai", Toast.LENGTH_SHORT).show();
-//        }
-
-
         }
 
 public void register(){
@@ -96,7 +83,6 @@ public void logins(){
                                 intent.putExtra("email", email);
                                 intent.putExtra("phone", phone);
 
-
                                 Toast.makeText(login_page.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
                                 startActivity(intent);
                                 finish();
@@ -109,8 +95,6 @@ public void logins(){
                         e.printStackTrace();
                         Toast.makeText(login_page.this, "Email dan password Salah", Toast.LENGTH_SHORT).show();
                     }
-
-
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -130,15 +114,11 @@ public void logins(){
             };
             requestQueue = Volley.newRequestQueue(getApplicationContext());
             requestQueue.add(sr);
-
         } else {
             Toast.makeText(getApplicationContext(), "Email dan password tidak boleh kosong", Toast.LENGTH_SHORT).show();
         }
     });
-
-
 }
-
     @Override
     public void finish() {
         super.finish();
