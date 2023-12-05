@@ -80,28 +80,49 @@
                 android:layout_margin="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-
-
             </androidx.cardview.widget.CardView>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:clipToPadding="false"
-                android:layout_above="@+id/btnCheckout" />
+            <ImageView
+                android:id="@+id/ivCategoryImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/baseline_email_24" />
+
+            <TextView
+                android:id="@+id/tvCategoryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/ivCategoryImage"
+                android:layout_centerVertical="true"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:text="Category Title" />
+
+            <Button
+                android:id="@+id/btnAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCategoryTitle"
+                android:text="Add to Cart"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:padding="4dp"
+                android:background="?attr/colorPrimary"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/btnCheckout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Checkout"
+                android:textStyle="bold"
                 android:layout_alignParentBottom="true"
-                android:background="?attr/colorPrimary"
+                android:background="@color/orange"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
-                android:padding="16dp"/>
+                android:padding="16dp" />
         </LinearLayout>
 
     </ScrollView>
@@ -123,3 +144,4 @@
         app:menu="@menu/bottom_menu" />
 
 </RelativeLayout>
+
