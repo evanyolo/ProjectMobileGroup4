@@ -10,19 +10,15 @@ public class UserManagement {
     Context c;
     SharedPreferences sp;
     public SharedPreferences.Editor editor;
-
     public static final String pref_name ="User_login";
     public static final String login ="is_User_login";
     public static final String names ="name_customer";
     public static final String emails ="email";
     public static final String phones ="phone";
-
     public UserManagement(Context c){
         this.c = c;
         sp = c.getSharedPreferences(pref_name,Context.MODE_PRIVATE);
         editor = sp.edit();
-
-
     }
     public boolean isUserlog(){
         return sp.getBoolean(login,true);
@@ -34,7 +30,6 @@ public class UserManagement {
         editor.putString(emails,email);
         editor.putString(phones,phone);
         editor.apply();
-
     }
     public void checkLog(){
         if(this.isUserlog()){

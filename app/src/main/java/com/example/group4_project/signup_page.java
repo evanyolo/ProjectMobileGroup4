@@ -42,7 +42,6 @@ Button confirm;
         btnRegis = findViewById(R.id.btnRegis);
 
         register();
-
     }
     public void register(){
         btnRegis.setOnClickListener(view -> {
