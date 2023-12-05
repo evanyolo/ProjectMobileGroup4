@@ -6,7 +6,5 @@ public class profiless {
         this.nama = nama;
         this.email = email;
         this.phone = email;
-    }
-
-
+   }
 }

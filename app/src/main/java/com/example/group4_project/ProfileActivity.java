@@ -76,6 +76,6 @@ public class ProfileActivity extends AppCompatActivity {
              name_tv.setText(mName);
              emails_tv.setText(mEmails);
              phones_tv.setText(mPhone);
-    }
+        }
     }
 }

@@ -78,6 +78,7 @@ public void logins(){
                                 final String phone = o.getString("phone");
 
                                 um.userSessions(name,email,phone);
+
                                 Intent intent = new Intent(login_page.this, ProfileActivity.class);
                                 intent.putExtra("name_customer", name);
                                 intent.putExtra("email", email);

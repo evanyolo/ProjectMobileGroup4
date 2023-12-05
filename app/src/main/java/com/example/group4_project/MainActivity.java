@@ -17,26 +17,27 @@ import java.util.List;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
     private List<OrderListModel> orderListModels;
     //private CategoryAdapter categoryAdapter;
     private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //orderListModels = new ArrayList<>();
+        orderListModels = new ArrayList<>();
+
+
         //orderListModels.add(new or("Membenarkan Toilet", R.drawable.toilets));
         //orderListModels.add(new CategoryModel("Memperbaiki Atap", R.drawable.roofs));
-       // orderListModels.add(new CategoryModel("Membangun Kolam Renang", R.drawable.swimmingpool));
+       //orderListModels.add(new CategoryModel("Membangun Kolam Renang", R.drawable.swimmingpool));
 
         //recyclerView.setAdapter(categoryAdapter);
-
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.bottom_home);
@@ -62,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
         //categoryAdapter = new CategoryAdapter(context);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         //recyclerView.setAdapter(categoryAdapter);
+    }
+    public void lists(){
+
     }
 
 }

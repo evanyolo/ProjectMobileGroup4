@@ -52,6 +52,4 @@ public class UserManagement {
         c.startActivity(i);
         ((ProfileActivity)c).finish();
     }
-
-
 }
