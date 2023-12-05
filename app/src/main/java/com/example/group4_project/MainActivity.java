@@ -3,10 +3,14 @@ package com.example.group4_project;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.Toolbar;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,8 +18,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<CategoryModel> categoryModels;
+    private List<OrderListModel> orderListModels;
     private CategoryAdapter categoryAdapter;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +30,11 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        categoryModels = new ArrayList<>();
-        categoryModels.add(new CategoryModel("Membenarkan Toilet", R.drawable.toilets));
-        categoryModels.add(new CategoryModel("Memperbaiki Atap", R.drawable.roofs));
-        categoryModels.add(new CategoryModel("Membangun Kolam Renang", R.drawable.swimmingpool));
+        //orderListModels = new ArrayList<>();
+        //orderListModels.add(new or("Membenarkan Toilet", R.drawable.toilets));
+        //orderListModels.add(new CategoryModel("Memperbaiki Atap", R.drawable.roofs));
+       // orderListModels.add(new CategoryModel("Membangun Kolam Renang", R.drawable.swimmingpool));
 
-        categoryAdapter = new CategoryAdapter(this, categoryModels);
         recyclerView.setAdapter(categoryAdapter);
 
 
@@ -53,6 +57,11 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
+
+        recyclerView = findViewById(R.id.recyclerView);
+        categoryAdapter = new CategoryAdapter(context);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(categoryAdapter);
     }
 
 }

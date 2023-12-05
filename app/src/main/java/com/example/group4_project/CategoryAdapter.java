@@ -9,50 +9,43 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
     private Context context;
-    private List<CategoryModel> categoryModels;
+    private List<OrderListModel> orderListModels;
 
-    public CategoryAdapter(Context context, List<CategoryModel> categoryModels) {
+    public CategoryAdapter(Context context) {
         this.context = context;
-        this.categoryModels = categoryModels;
+        this.orderListModels = orderListModels;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_categories, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_categories, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final CategoryModel categoryModel = categoryModels.get(position);
-
-        holder.categoryTitle.setText(categoryModel.getCategoryName());
-
-        Glide.with(context)
-                .load(categoryModel.getCategoryImage())
-                .into(holder.categoryImage);
+        OrderListModel orderModel = orderListModels.get(position);
+        holder.name.setText(orderModel.getName());
     }
 
     @Override
     public int getItemCount() {
-        return categoryModels.size();
+        return orderListModels.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private ImageView categoryImage;
-        private TextView categoryTitle;
+        TextView name, price;
+        ImageView categoryImage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            categoryImage = itemView.findViewById(R.id.iv_categoryImage);
-            categoryTitle = itemView.findViewById(R.id.txt_categoryTitle);
+            name = itemView.findViewById(R.id.name);
+            price = itemView.findViewById(R.id.price);
         }
     }
 }
