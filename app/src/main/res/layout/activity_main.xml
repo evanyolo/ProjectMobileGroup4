@@ -124,7 +124,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="421dp"
+                android:layout_height="370dp"
                 android:layout_above="@+id/btnCheckout"
                 android:clipToPadding="false"
                 android:padding="16dp" />

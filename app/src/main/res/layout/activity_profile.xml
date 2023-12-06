@@ -26,7 +26,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="663dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
 
             <Button
                 android:id="@+id/logout"
@@ -35,23 +37,51 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="570dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="527dp"
+                android:layout_marginEnd="3dp"
                 android:backgroundTint="#FEF1D7"
                 android:text="Log Out"
                 app:cornerRadius="100dp" />
 
-            <TextView
-                android:id="@+id/profilenames"
-                android:layout_width="139dp"
-                android:layout_height="43dp"
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="147dp"
+                android:layout_alignBottom="@+id/logout"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="139dp"
-                android:layout_marginTop="36dp"
-                android:layout_marginEnd="115dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="411dp"
+                android:background="@drawable/circular_background" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="178dp"
+                android:layout_height="185dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="107dp"
+                android:layout_marginBottom="486dp"
+                android:src="@drawable/orang"
+                app:civ_border_color="#3f51b5"
+                app:civ_border_width="4dp"
+                app:civ_shadow="true"
+                app:civ_shadow_color="#3f51b5"
+                app:civ_shadow_radius="10dp" />
+
+            <TextView
+                android:id="@+id/profilenames"
+                android:layout_width="wrap_content"
+                android:layout_height="41dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="151dp"
+                android:layout_marginTop="211dp"
+                android:layout_marginEnd="102dp"
 
                 android:text="Name "
                 android:textAlignment="center"
@@ -65,11 +95,11 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="75dp"
-                android:layout_marginTop="36dp"
-                android:layout_marginEnd="234dp"
+                android:layout_marginStart="105dp"
+                android:layout_marginTop="211dp"
+                android:layout_marginEnd="204dp"
 
-                android:text="Hello"
+                android:text="Hello, "
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
@@ -81,10 +111,10 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="139dp"
-                android:layout_marginTop="168dp"
+                android:layout_marginStart="154dp"
+                android:layout_marginTop="423dp"
 
-                android:layout_marginEnd="115dp"
+                android:layout_marginEnd="100dp"
                 android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -97,9 +127,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="139dp"
-                android:layout_marginTop="126dp"
-                android:layout_marginEnd="42dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="261dp"
+                android:layout_marginEnd="81dp"
 
                 android:text=""
                 android:textAlignment="center"
@@ -113,9 +143,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="79dp"
-                android:layout_marginTop="124dp"
-                android:layout_marginEnd="230dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="318dp"
+                android:layout_marginEnd="277dp"
 
                 android:text="Email:"
                 android:textAlignment="center"
@@ -129,9 +159,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="83dp"
-                android:layout_marginTop="167dp"
-                android:layout_marginEnd="226dp"
+                android:layout_marginStart="43dp"
+                android:layout_marginTop="375dp"
+                android:layout_marginEnd="266dp"
 
                 android:text="Phone:"
                 android:textAlignment="center"
