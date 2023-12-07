@@ -10,23 +10,14 @@
     android:padding="0dp"
     tools:context=".ProfileActivity">
 
-    <include layout="@layout/toolbar"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/logout1"
-            android:layout_width="2dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FEF1D7"
-            app:cornerRadius="100dp" />
-
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="761dp"
             android:orientation="vertical">
 
 
@@ -38,33 +29,63 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="1dp"
-                android:layout_marginTop="636dp"
+                android:layout_marginTop="594dp"
                 android:layout_marginEnd="7dp"
                 android:backgroundTint="#FEF1D7"
                 android:text="Log Out"
                 app:cornerRadius="100dp" />
 
+            <Button
+                android:id="@+id/editprofilebtn"
+                android:layout_width="383dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="474dp"
+                android:layout_marginEnd="6dp"
+                android:backgroundTint="#FEF1D7"
+                android:text="Edit Profile"
+                app:cornerRadius="100dp" />
+
+            <Button
+                android:id="@+id/aboutusbtn"
+                android:layout_width="383dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="536dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#FEF1D7"
+                android:text="About Us"
+                app:cornerRadius="100dp" />
+
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="wrap_content"
-                android:layout_height="115dp"
+                android:layout_height="99dp"
                 android:layout_alignBottom="@+id/logout"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="558dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="88dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="465dp"
                 android:background="@drawable/circular_background" />
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:layout_width="143dp"
                 android:layout_height="140dp"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="121dp"
-                android:layout_marginBottom="543dp"
+                android:layout_marginTop="98dp"
+                android:layout_marginEnd="131dp"
+                android:layout_marginBottom="521dp"
                 android:src="@drawable/orang"
                 app:civ_border_color="#3f51b5"
                 app:civ_border_width="4dp"
@@ -79,22 +100,14 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="147dp"
-                android:layout_marginTop="159dp"
-                android:layout_marginEnd="106dp"
+                android:layout_marginStart="144dp"
+                android:layout_marginTop="237dp"
+                android:layout_marginEnd="109dp"
 
                 android:text="Name "
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="444dp"
-                android:background="@color/orange" />
 
             <TextView
                 android:id="@+id/hi"
@@ -103,27 +116,11 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="108dp"
-                android:layout_marginTop="159dp"
-                android:layout_marginEnd="201dp"
+                android:layout_marginStart="105dp"
+                android:layout_marginTop="237dp"
+                android:layout_marginEnd="204dp"
 
                 android:text="Hello, "
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/profilephones"
-                android:layout_width="139dp"
-                android:layout_height="43dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="154dp"
-                android:layout_marginTop="423dp"
-
-                android:layout_marginEnd="100dp"
-                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
@@ -135,9 +132,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="101dp"
-                android:layout_marginTop="187dp"
-                android:layout_marginEnd="80dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="302dp"
+                android:layout_marginEnd="53dp"
 
                 android:text=""
                 android:textAlignment="center"
@@ -145,17 +142,17 @@
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/hi2"
-                android:layout_width="wrap_content"
-                android:layout_height="42dp"
+                android:id="@+id/profilephones"
+                android:layout_width="139dp"
+                android:layout_height="43dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="318dp"
-                android:layout_marginEnd="277dp"
+                android:layout_marginStart="161dp"
+                android:layout_marginTop="359dp"
 
-                android:text="Email:"
+                android:layout_marginEnd="93dp"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
@@ -167,14 +164,32 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="43dp"
-                android:layout_marginTop="375dp"
-                android:layout_marginEnd="266dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="358dp"
+                android:layout_marginEnd="259dp"
 
                 android:text="Phone:"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/hi2"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="302dp"
+                android:layout_marginEnd="261dp"
+
+                android:text="Email:"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <include layout="@layout/toolbar" />
 
         </RelativeLayout>
 

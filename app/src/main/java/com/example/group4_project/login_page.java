@@ -81,7 +81,7 @@ public void logins(){
                                 finish();
                                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                             }
-                            Intent intent = new Intent(login_page.this, ProfileActivity.class);
+                            Intent intent = new Intent(login_page.this, MainActivity.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(login_page.this, "Email dan password tidak sesuai", Toast.LENGTH_SHORT).show();
