@@ -68,7 +68,6 @@ public void logins(){
                         JSONObject js = new JSONObject(response);
                         String r = js.getString("status");
                         JSONArray jsonArray = js.getJSONArray("data");
-
                         if (r.equals("success")) {
                             // Assuming you're expecting only one object in the array
                            for(int i =0; i < jsonArray.length();i++){
@@ -76,19 +75,14 @@ public void logins(){
                                 final String name = o.getString("name_customer");
                                 final String email = o.getString("email");
                                 final String phone = o.getString("phone");
-
                                 um.userSessions(name,email,phone);
-
-                                Intent intent = new Intent(login_page.this, ProfileActivity.class);
-                                intent.putExtra("name_customer", name);
-                                intent.putExtra("email", email);
-                                intent.putExtra("phone", phone);
-
+                                new profiless(name,email,phone);
                                 Toast.makeText(login_page.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
-                                startActivity(intent);
                                 finish();
                                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                             }
+                            Intent intent = new Intent(login_page.this, ProfileActivity.class);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(login_page.this, "Email dan password tidak sesuai", Toast.LENGTH_SHORT).show();
                         }
@@ -119,6 +113,9 @@ public void logins(){
             Toast.makeText(getApplicationContext(), "Email dan password tidak boleh kosong", Toast.LENGTH_SHORT).show();
         }
     });
+}
+public void information(){
+
 }
     @Override
     public void finish() {

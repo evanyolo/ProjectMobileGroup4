@@ -42,6 +42,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
             return false;
         });
+
         show();
         logout();
     }
@@ -65,17 +66,13 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
     public void show(){
-        Intent i = getIntent();
+
         name_tv = findViewById(R.id.profilenames);
         emails_tv = findViewById(R.id.profileemail);
         phones_tv = findViewById(R.id.profilephones);
-         if (i != null) {
-             final String mName = i.getStringExtra("name_customer");
-             final String mEmails = i.getStringExtra("email");
-             final String mPhone = i.getStringExtra("phone");
-             name_tv.setText(mName);
-             emails_tv.setText(mEmails);
-             phones_tv.setText(mPhone);
-        }
+             name_tv.setText(profiless.getNama());
+             emails_tv.setText(profiless.getEmail());
+             phones_tv.setText(profiless.getPhone());
+
     }
 }
