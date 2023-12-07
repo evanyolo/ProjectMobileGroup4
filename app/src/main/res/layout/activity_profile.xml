@@ -31,7 +31,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginTop="594dp"
                 android:layout_marginEnd="7dp"
-                android:backgroundTint="#FEF1D7"
+                android:backgroundTint="#F56B2E"
                 android:text="Log Out"
                 app:cornerRadius="100dp" />
 
@@ -45,7 +45,7 @@
                 android:layout_marginStart="3dp"
                 android:layout_marginTop="474dp"
                 android:layout_marginEnd="6dp"
-                android:backgroundTint="#FEF1D7"
+                android:backgroundTint="#F56B2E"
                 android:text="Edit Profile"
                 app:cornerRadius="100dp" />
 
@@ -59,7 +59,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginTop="536dp"
                 android:layout_marginEnd="8dp"
-                android:backgroundTint="#FEF1D7"
+                android:backgroundTint="@color/orange"
                 android:text="About Us"
                 app:cornerRadius="100dp" />
 
