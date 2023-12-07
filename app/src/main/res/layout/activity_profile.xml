@@ -22,17 +22,45 @@
 
 
             <Button
+                android:id="@+id/aboutusbtn"
+                android:layout_width="383dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="483dp"
+                android:layout_marginEnd="14dp"
+                android:backgroundTint="@color/orange"
+                android:text="About Us"
+                app:cornerRadius="100dp" />
+
+            <Button
                 android:id="@+id/logout"
                 android:layout_width="383dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="594dp"
-                android:layout_marginEnd="7dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="538dp"
+                android:layout_marginEnd="14dp"
                 android:backgroundTint="#F56B2E"
                 android:text="Log Out"
+                app:cornerRadius="100dp" />
+
+            <Button
+                android:id="@+id/delAccountbtn"
+                android:layout_width="383dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="592dp"
+                android:layout_marginEnd="14dp"
+                android:backgroundTint="#F56B2E"
+                android:text="Delete Account"
                 app:cornerRadius="100dp" />
 
             <Button
@@ -42,31 +70,17 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="474dp"
-                android:layout_marginEnd="6dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="431dp"
+                android:layout_marginEnd="14dp"
                 android:backgroundTint="#F56B2E"
                 android:text="Edit Profile"
-                app:cornerRadius="100dp" />
-
-            <Button
-                android:id="@+id/aboutusbtn"
-                android:layout_width="383dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="536dp"
-                android:layout_marginEnd="8dp"
-                android:backgroundTint="@color/orange"
-                android:text="About Us"
                 app:cornerRadius="100dp" />
 
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="wrap_content"
-                android:layout_height="99dp"
+                android:layout_height="86dp"
                 android:layout_alignBottom="@+id/logout"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
@@ -74,7 +88,7 @@
                 android:layout_marginStart="29dp"
                 android:layout_marginTop="88dp"
                 android:layout_marginEnd="35dp"
-                android:layout_marginBottom="465dp"
+                android:layout_marginBottom="412dp"
                 android:background="@drawable/circular_background" />
 
             <com.mikhaellopez.circularimageview.CircularImageView
@@ -100,12 +114,11 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="144dp"
-                android:layout_marginTop="237dp"
-                android:layout_marginEnd="109dp"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="238dp"
+                android:layout_marginEnd="113dp"
 
                 android:text="Name "
-                android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -116,9 +129,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="105dp"
-                android:layout_marginTop="237dp"
-                android:layout_marginEnd="204dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="238dp"
+                android:layout_marginEnd="245dp"
 
                 android:text="Hello, "
                 android:textAlignment="center"
@@ -132,28 +145,24 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="128dp"
-                android:layout_marginTop="302dp"
-                android:layout_marginEnd="53dp"
+                android:layout_marginStart="144dp"
+                android:layout_marginTop="288dp"
+                android:layout_marginEnd="37dp"
 
-                android:text=""
-                android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/profilephones"
-                android:layout_width="139dp"
-                android:layout_height="43dp"
+                android:layout_width="170dp"
+                android:layout_height="42dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="161dp"
-                android:layout_marginTop="359dp"
+                android:layout_marginStart="144dp"
+                android:layout_marginTop="344dp"
+                android:layout_marginEnd="81dp"
 
-                android:layout_marginEnd="93dp"
-                android:text=""
-                android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -164,9 +173,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="358dp"
-                android:layout_marginEnd="259dp"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="344dp"
+                android:layout_marginEnd="244dp"
 
                 android:text="Phone:"
                 android:textAlignment="center"
@@ -180,9 +189,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="302dp"
-                android:layout_marginEnd="261dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="288dp"
+                android:layout_marginEnd="245dp"
 
                 android:text="Email:"
                 android:textAlignment="center"

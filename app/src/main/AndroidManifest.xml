@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".editProfile"
+            android:exported="false" />
+        <activity
             android:name=".Advertising3"
             android:exported="false" />
         <activity

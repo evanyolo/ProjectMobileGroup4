@@ -3,6 +3,7 @@ package com.example.group4_project;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.widget.Button;
 
 import java.util.HashMap;
 
@@ -45,11 +46,14 @@ public class UserManagement {
     u.put(phones, sp.getString(phones, ""));
     return u;
 }
-    public void logout(){
-        editor.clear();
-        editor.commit();
-        Intent i = new Intent(c, login_page.class);
-        c.startActivity(i);
-        ((ProfileActivity)c).finish();
+    public void logout(Button btnButton){
+        btnButton.setOnClickListener(view -> {
+            editor.clear();
+            editor.commit();
+            Intent i = new Intent(c, login_page.class);
+            c.startActivity(i);
+            ((ProfileActivity)c).finish();
+        });
+
     }
 }

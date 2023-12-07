@@ -16,7 +16,7 @@ import java.util.HashMap;
 public class ProfileActivity extends AppCompatActivity {
     TextView name_tv, emails_tv , phones_tv;
     String nama, email, phone;
-    Button logoutBtn;
+    Button logoutBtn,btnEdit;
     UserManagement um;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,12 @@ public class ProfileActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.bottom_profile);
+        btnEdit = findViewById(R.id.editprofilebtn);
+        btnEdit.setOnClickListener(view -> {
+            Intent i = new Intent(getApplicationContext(), editProfile.class);
+            startActivity(i);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        });
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if(item.getItemId() == R.id.bottom_home){
@@ -45,28 +51,30 @@ public class ProfileActivity extends AppCompatActivity {
 
         show();
         logout();
+
+
     }
     public void logout(){
         logoutBtn = findViewById(R.id.logout);
         logoutBtn.setOnClickListener(view -> {
             um = new UserManagement(this);
-            um.checkLog();
-
             AlertDialog.Builder ad = new AlertDialog.Builder(this);
-
             ad.setTitle("Log out?");
             ad.setMessage("Are you sure want to Log out?");
             ad.setPositiveButton("Yes", (dialogInterface, i) -> {
-                um.logout();
+                Toast.makeText(this, "Log out",Toast.LENGTH_SHORT).show();
+                    um.checkLog();
+                    um.logout(logoutBtn);
+
+
             });
             ad.setNegativeButton("No",(dialogInterface, i) -> {
                 Toast.makeText(this, "Log out failed",Toast.LENGTH_SHORT).show();
-                dialogInterface.dismiss();
             });
+            ad.show();
         });
     }
     public void show(){
-
         name_tv = findViewById(R.id.profilenames);
         emails_tv = findViewById(R.id.profileemail);
         phones_tv = findViewById(R.id.profilephones);
