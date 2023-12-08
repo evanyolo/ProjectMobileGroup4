@@ -15,7 +15,6 @@ import java.util.HashMap;
 
 public class ProfileActivity extends AppCompatActivity {
     TextView name_tv, emails_tv , phones_tv;
-    String nama, email, phone;
     Button logoutBtn,btnEdit;
     UserManagement um;
     @Override
@@ -68,9 +67,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
             });
-            ad.setNegativeButton("No",(dialogInterface, i) -> {
-                Toast.makeText(this, "Log out failed",Toast.LENGTH_SHORT).show();
-            });
+            ad.setNegativeButton("No",(dialogInterface, i) -> Toast.makeText(this, "Log out failed",Toast.LENGTH_SHORT).show());
             ad.show();
         });
     }
@@ -78,9 +75,10 @@ public class ProfileActivity extends AppCompatActivity {
         name_tv = findViewById(R.id.profilenames);
         emails_tv = findViewById(R.id.profileemail);
         phones_tv = findViewById(R.id.profilephones);
-             name_tv.setText(profiless.getNama());
-             emails_tv.setText(profiless.getEmail());
-             phones_tv.setText(profiless.getPhone());
 
+
+        name_tv.setText(profiless.getNama());
+        emails_tv.setText(profiless.getEmail());
+        phones_tv.setText(profiless.getPhone());
     }
 }
