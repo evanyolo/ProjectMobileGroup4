@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,6 +49,14 @@ public class ProfileActivity extends AppCompatActivity {
             return false;
         });
 
+        Button btn = findViewById(R.id.aboutusbtn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), MapsAbout.class);
+                startActivity(i);
+            }
+        });
         show();
         logout();
 
