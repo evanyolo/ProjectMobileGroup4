@@ -72,11 +72,13 @@ public void logins(){
                             // Assuming you're expecting only one object in the array
                            for(int i =0; i < jsonArray.length();i++){
                                 JSONObject o = jsonArray.getJSONObject(i);
+                                final String id = o.getString("account_id");
                                 final String name = o.getString("name_customer");
                                 final String email = o.getString("email");
                                 final String phone = o.getString("phone");
+                                Log.e("Error",id);
                                 um.userSessions(name,email,phone);
-                                new profiless(name,email,phone);
+                                new profiless(id,name,email,phone);
                                 Toast.makeText(login_page.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
                                 finish();
                                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

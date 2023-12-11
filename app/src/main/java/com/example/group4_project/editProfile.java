@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,13 +18,17 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class editProfile extends AppCompatActivity {
     Button edit;
     EditText edEmail, edName,edPhone;
-    String nama,email,phone;
+    String nama,email,phone,names,phones;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +41,12 @@ public class editProfile extends AppCompatActivity {
         editProfiles();
     }
     public void editProfiles(){
+
         nama = profiless.getNama().toString();
         edName.setText(nama);
 
         email = profiless.getEmail().toString();
         edEmail.setText(email);
-
 
         phone = profiless.getPhone().toString();
         edPhone.setText(phone);
@@ -57,8 +62,35 @@ public class editProfile extends AppCompatActivity {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                Toast.makeText(editProfile.this,response.toString(),Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                                try {
+                                    JSONObject js = new JSONObject(response);
+                                    String status = js.getString("status");
+
+                                    if (status.equals("success")) {
+                                        JSONArray jsonArray = js.getJSONArray("data");
+
+                                        for (int i = 0; i < jsonArray.length(); i++) {
+                                            JSONObject o = jsonArray.getJSONObject(i);
+
+                                            String name = o.getString("name_customer");
+                                            String phone = o.getString("phone");
+
+
+                                            edName.setText(name);
+                                            edPhone.setText(phone);
+
+                                            Toast.makeText(editProfile.this, "Update Successful", Toast.LENGTH_SHORT).show();
+
+                                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                                        }
+                                    } else {
+                                        Toast.makeText(editProfile.this, "Failed to update", Toast.LENGTH_SHORT).show();
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                    Toast.makeText(editProfile.this, "Error updating profile", Toast.LENGTH_SHORT).show();
+                                }
+
                             }
                         }, new Response.ErrorListener() {
                     @Override
