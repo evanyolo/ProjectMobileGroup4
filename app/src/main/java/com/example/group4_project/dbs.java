@@ -9,3 +9,4 @@ public class dbs {
 
     public static final String urlEditProfile ="http://"+urlcode+"/File Mobile/projek/editProfiles.php";
 }
+//"C:\Xampp1\htdocs\File Mobile\projek\images\team_4.jpg"
