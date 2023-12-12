@@ -1,9 +1,11 @@
 package com.example.group4_project;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,15 +22,15 @@ public class LabourerAdapter extends RecyclerView.Adapter<LabourerAdapter.labour
     List<labourer> labourerList;
 
     public class labourerHold extends RecyclerView.ViewHolder {
-      TextView name_team, address, price,image;
+      TextView name_team, address, price;
+      ImageView image;
       LinearLayout listLabourer;
         public labourerHold(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.imagelabourer);
-            name_team = itemView.findViewById(R.id.namateamsinfo);
-            address = itemView.findViewById(R.id.addressinfo);
-            price = itemView.findViewById(R.id.priceinfo);
-            listLabourer = itemView.findViewById(R.id.layoutInfo);
+            name_team = itemView.findViewById(R.id.namateamsinfos);
+            address = itemView.findViewById(R.id.addressinfos);
+            price = itemView.findViewById(R.id.priceinfos);
         }
     }
     public LabourerAdapter(Context context, List<labourer> labourerList) {
@@ -50,13 +52,14 @@ public class LabourerAdapter extends RecyclerView.Adapter<LabourerAdapter.labour
     holder.name_team.setText(labourer.getTeam_labourer());
 
     holder.address.setText(labourer.getAddress());
-    holder.price.setText(labourer.getPrice());
-        //Glide.with(context).load(labourer.getImage_lab()).into(holder.image);
-
+    holder.price.setText(String.valueOf(labourer.getPrice()));
+    Glide.with(context).load(labourer.getImage_lab()).into(holder.image);
     holder.listLabourer.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            Intent i = new Intent(context, DetailProducts.class);
+            // Add any necessary data to the intent here
+            context.startActivity(i);
         }
     });
     }

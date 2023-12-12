@@ -31,7 +31,6 @@ public class ProfileActivity extends AppCompatActivity {
     TextView name_tv, emails_tv , phones_tv;
     Button logoutBtn,btnEdit, delAccount;
     String id = profiless.getId();
-    int idss;
     UserManagement um;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +73,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
     private void refreshUserInfo() {
 
-        String updatedName = profiless.getNama();
+        String updatedName = profiless.getEmail();
         String updatedEmail = profiless.getEmail();
         String updatedPhone = profiless.getPhone();
 
@@ -140,6 +139,7 @@ public class ProfileActivity extends AppCompatActivity {
         btnEdit.setOnClickListener(view -> {
             Intent i = new Intent(getApplicationContext(), editProfile.class);
             startActivity(i);
+            onResume();
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 

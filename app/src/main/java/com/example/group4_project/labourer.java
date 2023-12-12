@@ -1,9 +1,9 @@
 package com.example.group4_project;
 
 public class labourer {
-    private  String labourer_id;
+    private static String labourer_id;
 
-    public String getLabourer_id() {
+    public static String getLabourer_id() {
         return labourer_id;
     }
 
@@ -11,15 +11,15 @@ public class labourer {
         this.labourer_id = labourer_id;
     }
 
-    public String getTeam_labourer() {
+    public static String getTeam_labourer() {
         return team_labourer;
     }
 
-    public void setTeam_labourer(String team_labourer) {
+    public void setTeam_labourer() {
         this.team_labourer = team_labourer;
     }
 
-    public String getCategory() {
+    public static String getCategory() {
         return category;
     }
 
@@ -27,7 +27,7 @@ public class labourer {
         this.category = category;
     }
 
-    public String getAddress() {
+    public static String getAddress() {
         return address;
     }
 
@@ -35,7 +35,7 @@ public class labourer {
         this.address = address;
     }
 
-    public String getImage_lab() {
+    public static String getImage_lab() {
         return image_lab;
     }
 
@@ -43,7 +43,7 @@ public class labourer {
         this.image_lab = image_lab;
     }
 
-    public String getInformation() {
+    public static String getInformation() {
         return information;
     }
 
@@ -51,7 +51,7 @@ public class labourer {
         this.information = information;
     }
 
-    public int getPrice() {
+    public static int getPrice() {
         return price;
     }
 
@@ -59,19 +59,16 @@ public class labourer {
         this.price = price;
     }
 
-    private String team_labourer;
-    private String category;
-    private String address;
-    private String image_lab;
-    private String information;
-    private  int price;
-
-
-
+    private static String team_labourer;
+    private static String category;
+    private static String address;
+    private static String image_lab;
+    private static String information;
+    private static int price;
 
     public labourer(String labourer_id
             , String team_labourer
-                    , String image_lab
+            , String image_lab
             , String category
             , String information
             , int price){

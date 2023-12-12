@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".DetailProducts"
+            android:exported="false" />
+        <activity
             android:name=".MapsAbout"
             android:exported="false" />
         <activity
@@ -43,10 +46,10 @@
             android:name=".login_page"
             android:exported="false" />
         <activity
-            android:name=".Openinglogo"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Openinglogo"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -58,11 +61,9 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDCTICcPDPWhLEsZvfdSmzdPp_yCTzrhEs" />
     </application>
-
 
 </manifest>
