@@ -2,6 +2,7 @@ package com.example.group4_project;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
@@ -42,16 +43,11 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recyclerView = findViewById(R.id.recyclerView);
 
-        labourerList = new ArrayList<>();
-        adapter = new LabourerAdapter(MainActivity.this, labourerList);
-        recyclerView.setAdapter(adapter);
-        nama = findViewById(R.id.namateamsinfos);
 
-        lists();
-        String names = labourer.getTeam_labourer();
-        nama.setText(names);
+
+
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.bottom_home);
 
@@ -72,9 +68,16 @@ public class MainActivity extends AppCompatActivity {
             return false;
         });
 
-
+        lists();
     }
     public void lists(){
+        recyclerView = findViewById(R.id.recyclerView);
+
+        labourerList = new ArrayList<labourer>();
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        labourerList = new ArrayList<labourer>();
         StringRequest sr = new StringRequest(Request.Method.GET, dbs.urllabourerlist,
                 new Response.Listener<String>() {
                     @Override
@@ -89,11 +92,18 @@ public class MainActivity extends AppCompatActivity {
                                 String categories= object.getString("category");
                                 String image = object.getString("image_labourer");
                                 String information = object.getString("information");
+                                int price = object.getInt("price");
                                 Log.e("error",id);
                                 Log.e("error",team_lab);
-                                int price = object.getInt("price");
-                                labourer labourer = new labourer(id ,team_lab,image,categories, information, price);
-                                labourerList.add(labourer);
+                                Log.e("error",categories);
+
+                                labourer labourers = new labourer();
+                                labourers.setTeam_labourer(team_lab);
+                                labourers.setCategory(categories);
+                                labourers.setPrice(price);
+                                labourers.setImage_lab(image);
+                                labourers.setInformation(information);
+                                labourerList.add(labourers);
 
                             }
                         } catch (JSONException e) {

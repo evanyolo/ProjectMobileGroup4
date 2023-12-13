@@ -73,7 +73,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
     private void refreshUserInfo() {
 
-        String updatedName = profiless.getEmail();
+        String updatedName = profiless.getNama();
         String updatedEmail = profiless.getEmail();
         String updatedPhone = profiless.getPhone();
 
