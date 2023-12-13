@@ -1,6 +1,5 @@
 package com.example.group4_project;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,15 +12,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -71,55 +67,49 @@ public class MainActivity extends AppCompatActivity {
         lists();
     }
     public void lists(){
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerViews);
+        recyclerView.setHasFixedSize(true);
 
-        labourerList = new ArrayList<labourer>();
+        labourerList = new ArrayList<>();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        labourerList = new ArrayList<labourer>();
-        StringRequest sr = new StringRequest(Request.Method.GET, dbs.urllabourerlist,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray array = new JSONArray(response);
-                            for(int i =0; i<array.length();i++){
-                                JSONObject object = array.getJSONObject(i);
 
-                                String id = object.getString("labourer_id");
-                                String team_lab = object.getString("name_labourer");
-                                String categories= object.getString("category");
-                                String image = object.getString("image_labourer");
-                                String information = object.getString("information");
-                                int price = object.getInt("price");
-                                Log.e("error",id);
-                                Log.e("error",team_lab);
-                                Log.e("error",categories);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(dbs.urllabourerlist, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray array) {
+                for(int i = 0; i<array.length(); i++){
+                    try {
+                        JSONObject object = array.getJSONObject(i);
 
-                                labourer labourers = new labourer();
-                                labourers.setTeam_labourer(team_lab);
-                                labourers.setCategory(categories);
-                                labourers.setPrice(price);
-                                labourers.setImage_lab(image);
-                                labourers.setInformation(information);
-                                labourerList.add(labourers);
+                        String id = object.getString("labourer_id").trim();
+                        String team_lab = object.getString("name_labourer").trim();
+                        String categories = object.getString("category").trim();
+                        String address = object.getString("address").trim();
+                        String image = object.getString("image_labourer").trim();
+                        String information = object.getString("information").trim();
+                        int price = object.getInt("price");
+                        Log.e("error", id);
+                        Log.e("error", team_lab);
+                        Log.e("error", categories);
+                        Log.e("error", address);
 
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                       adapter = new LabourerAdapter(MainActivity.this,labourerList);
-                        recyclerView.setAdapter(adapter);
+                        labourerList.add(new labourer(id,team_lab,image,address,categories,information,price));
+                    }catch (JSONException e){
+                        e.printStackTrace();
                     }
-                }, new Response.ErrorListener() {
+                }
+                adapter = new LabourerAdapter(MainActivity.this,labourerList);
+                recyclerView.setAdapter(adapter);
+            }
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Error List", Toast.LENGTH_SHORT).show();
             }
-
         });
-        Volley.newRequestQueue(getApplicationContext()).add(sr);
+        RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
+        requestQueue.add(jsonArrayRequest);
     }
 
 }

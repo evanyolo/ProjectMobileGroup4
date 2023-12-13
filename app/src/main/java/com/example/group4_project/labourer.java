@@ -67,19 +67,21 @@ public class labourer {
 
 
 
-//    public labourer(String labourer_id
-//            , String team_labourer
-//            , String image_lab
-//            , String category
-//            , String information
-//            , int price){
-//
-//
-//        this.labourer_id = labourer_id;
-//        this.team_labourer = team_labourer;
-//        this.image_lab = image_lab;
-//        this.category = category;
-//        this.information = information;
-//        this.price = price;
-//    }
+    public labourer(String labourer_id
+            , String team_labourer
+            , String image_lab
+                    ,String address
+            , String category
+            , String information
+            , int price){
+
+
+        this.labourer_id = labourer_id;
+        this.team_labourer = team_labourer;
+        this.image_lab = image_lab;
+        this.address = address;
+        this.category = category;
+        this.information = information;
+        this.price = price;
+    }
 }

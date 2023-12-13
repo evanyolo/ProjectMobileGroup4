@@ -3,10 +3,14 @@ package com.example.group4_project;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -31,6 +35,10 @@ public class login_page extends AppCompatActivity {
     private String email, passwrd;
     private RequestQueue requestQueue;
     private Button btnLogins,signuppg;
+    private CheckBox rememberMeCb;
+    private DbLite dbLite;
+    private SharedPreferences sharedPref;
+    private SharedPreferences.Editor editor;
     UserManagement um;
 
     @Override
@@ -42,13 +50,52 @@ public class login_page extends AppCompatActivity {
 
         etEmaillog = findViewById(R.id.inputEmailLog);
         etPass = findViewById(R.id.inputPassLog);
+        rememberMeCb = findViewById(R.id.saveBox);
         um = new UserManagement(this);
+        sharedPref = getSharedPreferences("MyPrefs",Context.MODE_PRIVATE);
+        editor = sharedPref.edit();
 
         register();
         logins();
+
+        dbLite = new DbLite(this, "Logins.db", null, 1);
+        SharedPreferences sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        boolean isChecked = sharedPref.getBoolean("remember_me", false);
+
+        String savedEmail = sharedPref.getString("saved_email", "");
+
+        rememberMeCb.setChecked(isChecked);
+
+        if (isChecked) {
+            etEmaillog.setText(savedEmail);
         }
 
-public void register(){
+        rememberMeCb.setOnCheckedChangeListener((buttonView, isChecked1) -> {
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putBoolean("remember_me", isChecked1);
+            editor.apply();
+            if (isChecked1) {
+                String emailToSave = etEmaillog.getText().toString();
+                editor.putString("saved_email", emailToSave);
+                editor.apply();
+            }
+        });
+        }
+    private void displaySavedEmails() {
+        Cursor res = dbLite.getAllData();
+        StringBuilder data = new StringBuilder();
+
+        while (res != null && res.moveToNext()) {
+            String email = res.getString(1);
+            data.append(email).append("\n");
+        }
+
+        String allEmails = data.toString();
+        etEmaillog.setText(allEmails); // Set teks email ke EditText
+    }
+
+
+    public void register(){
     signuppg.setOnClickListener(view -> {
         Intent i = new Intent(getApplicationContext(), signup_page.class);
         startActivity(i);
@@ -116,9 +163,7 @@ public void logins(){
         }
     });
 }
-public void information(){
 
-}
     @Override
     public void finish() {
         super.finish();

@@ -44,6 +44,25 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/inputPassLog"
+            android:layout_width="296dp"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="255dp"
+            android:layout_marginEnd="48dp"
+            android:background="@drawable/cstm_edtt"
+            android:drawableStart="@drawable/password_svgrepo_com__1_"
+            android:ems="10"
+            android:hint="   Password"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+        <EditText
             android:id="@+id/inputEmailLog"
             android:layout_width="296dp"
             android:layout_height="46dp"
@@ -51,34 +70,17 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="48dp"
-            android:textColor="@color/black"
-            android:layout_marginTop="199dp"
+            android:layout_marginTop="179dp"
             android:layout_marginEnd="49dp"
             android:background="@drawable/cstm_edtt"
             android:drawableStart="@drawable/baseline_account_box_24"
             android:ems="10"
             android:hint="   Email"
-
-            android:textColorHint="@color/black"
             android:inputType="text"
-            android:paddingStart="10dp" />
 
-        <EditText
-            android:id="@+id/inputPassLog"
-            android:layout_width="296dp"
-            android:layout_height="46dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="275dp"
-            android:layout_marginEnd="48dp"
-            android:background="@drawable/cstm_edtt"
-            android:drawableStart="@drawable/password_svgrepo_com__1_"
-            android:ems="10"
-            android:hint="   Password"
+            android:paddingStart="10dp"
             android:textColor="@color/black"
-            android:inputType="textPassword"
-            android:textColorHint="@color/black"
-            android:paddingStart="10dp" />
+            android:textColorHint="@color/black" />
 
         <Button
             android:id="@+id/tohomepage"
@@ -129,6 +131,18 @@
             app:cornerRadius="15dp" />
 
         <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="286dp"
+            android:layout_marginTop="378dp"
+            android:layout_marginEnd="72dp"
+            android:src="@drawable/tiktok_square_color_icon" />
+
+        <ImageView
             android:id="@+id/imageView3"
             android:layout_width="35dp"
             android:layout_height="35dp"
@@ -136,7 +150,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="216dp"
-            android:layout_marginTop="359dp"
+            android:layout_marginTop="380dp"
             android:layout_marginEnd="142dp"
             android:src="@drawable/icons8_google" />
 
@@ -148,21 +162,9 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="149dp"
-            android:layout_marginTop="358dp"
+            android:layout_marginTop="379dp"
             android:layout_marginEnd="209dp"
             android:src="@drawable/_296520_bubble_chat_mobile_whatsapp_whatsapp_logo_icon" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="286dp"
-            android:layout_marginTop="357dp"
-            android:layout_marginEnd="72dp"
-            android:src="@drawable/tiktok_square_color_icon" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -172,9 +174,21 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="68dp"
-            android:layout_marginTop="360dp"
+            android:layout_marginTop="381dp"
             android:layout_marginEnd="267dp"
             android:src="@drawable/_296499_fb_facebook_facebook_logo_icon" />
+
+        <CheckBox
+            android:id="@+id/saveBox"
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="51dp"
+            android:layout_marginTop="319dp"
+            android:layout_marginEnd="50dp"
+            android:text="Save Email" />
 
 
     </RelativeLayout>
