@@ -4,17 +4,12 @@
     android:layout_height="wrap_content">
 
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:background="@color/black">
-
-    </LinearLayout>
-
+        android:background="@color/black"
+        ></LinearLayout>
     <ImageView
         android:layout_centerVertical="true"
         android:id="@+id/imagelabourer"
@@ -25,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:gravity="center"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:layout_toEndOf="@id/imagelabourer"
             android:textStyle="bold"
@@ -42,6 +38,7 @@
             android:layout_below="@id/namateamsinfos"
             android:layout_toEndOf="@id/imagelabourer"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:id="@+id/addressinfos"
             android:text="Address">
         </TextView>
@@ -50,11 +47,18 @@
             android:layout_height="35dp"
            android:layout_toEndOf="@id/imagelabourer"
             android:gravity="center"
+            android:textColor="@color/black"
             android:layout_below="@id/addressinfos"
             android:textSize="15dp"
             android:textStyle="bold"
             android:id="@+id/priceinfos"
             android:text="harga">
         </TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/priceinfos"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        ></LinearLayout>
 
 </RelativeLayout>

@@ -180,6 +180,7 @@
 
         <CheckBox
             android:id="@+id/saveBox"
+            android:hapticFeedbackEnabled="true"
             android:layout_width="292dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -187,8 +188,9 @@
             android:layout_alignParentEnd="true"
             android:layout_marginStart="51dp"
             android:layout_marginTop="319dp"
+            android:textColor="@color/black"
             android:layout_marginEnd="50dp"
-            android:text="Save Email" />
+            android:text="Remember Me" />
 
 
     </RelativeLayout>
